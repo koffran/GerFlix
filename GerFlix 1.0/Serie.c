@@ -1,15 +1,8 @@
-
+#include <stdio.h>
+#include <stdlib.h>
 #include "Serie.h"
 #include <string.h>
 
-/*
-    int idSerie;
-    char nombre[50];
-    char genero[20];
-    int cantidadTemporadas;
-    int estado;
-
-*/
 
 void inicializarSeriesEstado(eSerie series[], int cant)
 {
@@ -41,6 +34,52 @@ void inicializarSeriesHardCode(eSerie series[])
     }
 }
 
+void mostrarSerie (eSerie serie)
+{
+    if(serie.estado == 1)
+    {
+         printf("%d...%s--%s--Cantidad de temporadas: %d\n",serie.idSerie,serie.nombre,serie.genero,serie.cantidadTemporadas);
+    }
 
+}
 
+void mostrarListaSeries(eSerie* lista, int tam)
+{
+    int i;
+    for (i=0;i<tam;i++)
+    {
+        mostrarSerie(lista[i]);
+    }
+}
 
+int obtenerEspacioLibreSerie(eSerie lista[],int tam)
+{
+    int indice = -1,i;
+    for (i=0; i<tam; i++)
+    {
+        if (lista[i].estado ==0)
+        {
+            indice = i;
+        }
+    }
+    return indice;
+}
+
+void altaSerie (eSerie lista[], int i)
+{
+    printf("ingrese el nombre: \n");
+    fflush(stdin);
+    gets(lista[i].nombre);
+
+    printf("ingrese el genero: \n");
+    fflush(stdin);
+    gets(lista[i].genero);
+
+    printf("Ingrese el id: ");
+    scanf("%d",&lista[i].idSerie);
+
+    printf("Ingrese la cantidad de temporadas: ");
+    scanf("%d",&lista[i].cantidadTemporadas);
+
+    lista[i].estado = 1;
+}

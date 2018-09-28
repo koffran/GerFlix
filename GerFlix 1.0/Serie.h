@@ -11,4 +11,6 @@ typedef struct
 void inicializarSeriesEstado(eSerie[], int);
 void inicializarSeriesHardCode(eSerie[]);
 void mostrarListaSeries(eSerie[], int);
-
+void mostrarSerie (eSerie );
+int obtenerEspacioLibreSerie(eSerie[],int );
+void altaSerie (eSerie [], int );
