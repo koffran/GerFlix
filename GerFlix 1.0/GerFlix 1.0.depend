@@ -1,23 +1,25 @@
 # depslib dependency file v1.0
-1538140939 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\usuario.c
+1538145762 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\usuario.c
+	<stdio.h>
+	<stdlib.h>
 	"Usuario.h"
 
-1538141830 c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\usuario.h
+1538146594 c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\usuario.h
 
-1538141088 c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\serie.h
+1538145762 c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\serie.h
 
-1538141859 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\main.c
+1538146608 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\main.c
 	<stdio.h>
 	<stdlib.h>
 	"usuariosSeries.h"
 
-1538141163 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\serie.c
+1538145882 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\serie.c
 	<stdio.h>
 	<stdlib.h>
 	"Serie.h"
 	<string.h>
 
-1538141333 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\usuariosseries.c
+1538146388 source:c:\users\alumno\downloads\gerflix-master\gerflix-master\gerflix 1.0\usuariosseries.c
 	<stdio.h>
 	<stdlib.h>
 	"usuariosSeries.h"

@@ -14,3 +14,6 @@ void mostrarListaSeries(eSerie[], int);
 void mostrarSerie (eSerie );
 int obtenerEspacioLibreSerie(eSerie[],int );
 void altaSerie (eSerie [], int );
+int buscarIdSerie(eSerie [], int ,int );
+void bajaSerie (eSerie [], int );
+void modificarSerie (eSerie [], int );

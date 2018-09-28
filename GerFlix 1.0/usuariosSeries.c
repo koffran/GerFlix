@@ -30,7 +30,7 @@ void mostrarSerieConUsuarios (eSerie* series, int tamSer,eUsuario* usuarios, int
             printf ("\n%s: \n",series[i].nombre);
             for (j=0; j<tamUsu;j++)
             {
-                if(series[i].idSerie == usuarios[j].idSerie)
+                if(series[i].idSerie == usuarios[j].idSerie && usuarios[j].estado ==1)
                 {
                     printf("%8s\n",usuarios[j].nombre);
                     }
@@ -38,5 +38,4 @@ void mostrarSerieConUsuarios (eSerie* series, int tamSer,eUsuario* usuarios, int
         }
     }
 }
-
 

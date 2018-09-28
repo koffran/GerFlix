@@ -83,3 +83,92 @@ void altaSerie (eSerie lista[], int i)
 
     lista[i].estado = 1;
 }
+
+int buscarIdSerie(eSerie lista[], int id,int tam)
+{
+    int i,indice = -1;
+    for (i=0; i<tam; i++)
+    {
+        if (id == lista[i].idSerie)
+        {
+            indice = i;
+        }
+    }
+    return indice;
+}
+
+void bajaSerie (eSerie lista[], int i)
+{
+    char rta;
+    printf("Nombre: %s\n",lista[i].nombre);
+    printf("Desea eliminarlo? <S/N>\n");
+    fflush(stdin);
+    rta = getche();
+    rta = tolower(rta);
+    if ( rta == 's')
+    {
+        lista[i].estado = 0;
+        printf("\Serie elilminada\n\n");
+    }
+}
+
+
+void modificarSerie (eSerie lista[], int indice)
+{
+    int auxIdSerie, auxCantTemporadas;
+    char seguir = 's',auxNombre[50],auxGenero[20];
+    int opcion;
+
+    if (lista[indice].estado == 1)
+    {
+        while (seguir == 's')
+        {
+            system("cls");
+
+            printf("DATOS DE LA SERIE SELECCIONADA\n\n\t\tTITULO\t\tGENERO\t\tTemporadas\tID\n");
+            printf("\t\t%s\t\t%s\t\t\t%d\n",lista[indice].nombre,lista[indice].genero,lista[indice].cantidadTemporadas,lista[indice].idSerie);
+            printf("Que dato desea modificar? \n1 - Nombre\n2 - Genero\n3 - Cantidad de temporadas\n4 - ID\n5 - Salir\n");
+            scanf("%d",&opcion);
+
+            switch (opcion)
+            {
+            case 1:
+                system("cls");
+                printf("Ingrese el nuevo titulo: ");
+                fflush(stdin);
+                gets (lista[indice].nombre);
+                system("pause");
+                break;
+            case 2:
+                system("cls");
+                printf ("Ingrese el nuevo genero: ");
+                fflush(stdin);
+                gets (lista[indice].genero);
+                system("pause");
+                break;
+            case 3:
+                system("cls");
+                printf("Ingrese la Cantidad de temporadas: ");
+                scanf("%d",&auxCantTemporadas);
+                lista[indice].cantidadTemporadas = auxCantTemporadas;
+                system("pause");
+                break;
+            case 4:
+                system("cls");
+                printf("Ingrese el id: ");
+                scanf("%d",&auxIdSerie);
+                lista[indice].idSerie = auxIdSerie;
+                system("pause");
+                break;
+            case 5:
+                seguir = 'n';
+                break;
+            }
+
+        }
+    }
+    else
+    {
+        printf ("\nNo existe el ID ingresado");
+    }
+}

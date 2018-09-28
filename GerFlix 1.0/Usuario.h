@@ -12,3 +12,6 @@ void mostrarUsuario (eUsuario );
 void mostrarListaUsuarios(eUsuario[], int);
 int obtenerEspacioLibre(eUsuario [],int );
 void altaUs (eUsuario [], int);
+void bajaUsuario (eUsuario [], int );
+int buscarIdUsuario(eUsuario [], int ,int );
+void modificarUsuario (eUsuario [], int );

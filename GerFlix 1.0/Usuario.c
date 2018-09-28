@@ -30,9 +30,10 @@ void inicializarUsuariosHardCode(eUsuario usuarios[])
 
 void mostrarUsuario (eUsuario usuario)
 {
+
     if(usuario.estado == 1)
     {
-         printf("%s\n",usuario.nombre);
+         printf("%d---%s\n",usuario.idUsuario,usuario.nombre);
     }
 
 }
@@ -40,6 +41,7 @@ void mostrarUsuario (eUsuario usuario)
 void mostrarListaUsuarios(eUsuario* lista, int tam)
 {
     int i;
+    printf("ID --- NOMBRE\n");
     for (i=0;i<tam;i++)
     {
         mostrarUsuario(lista[i]);
@@ -71,3 +73,85 @@ void altaUs (eUsuario lista[], int i)
 
     lista[i].estado = 1;
 }
+
+int buscarIdUsuario(eUsuario lista[], int id,int tam)
+{
+    int i,indice = -1;
+    for (i=0; i<tam; i++)
+    {
+        if (id == lista[i].idUsuario)
+        {
+            indice = i;
+        }
+    }
+    return indice;
+}
+
+void bajaUsuario (eUsuario lista[], int i)
+{
+    char rta;
+    printf("Nombre: %s\n",lista[i].nombre);
+    printf("Desea eliminarlo? <S/N>\n");
+    fflush(stdin);
+    rta = getche();
+    rta = tolower(rta);
+    if ( rta == 's')
+    {
+        lista[i].estado = 0;
+        printf("\n Usuario elilminado\n\n");
+    }
+}
+
+void modificarUsuario (eUsuario lista[], int indice)
+{
+    int auxIdUsuario,auxIdSerie;
+    char seguir = 's',auxNombre[50];
+    int opcion;
+    if (lista[indice].estado == 1)
+    {
+        while (seguir == 's')
+        {
+            system("cls");
+
+            printf("DATOS DE LA SERIE SELECCIONADA\n\n\t\tNOMBRE\t\tID USUARIO\t\tID SERIE\tID\n");
+            printf("\t\t%s\t\t%d\t\t%d\n",lista[indice].nombre,lista[indice].idUsuario,lista[indice].idSerie);
+            printf("Que dato desea modificar? \n1 - Nombre\n2 - ID usuario\n3 - ID serie\n4 - Salir\n");
+            scanf("%d",&opcion);
+
+            switch (opcion)
+            {
+            case 1:
+                system("cls");
+                printf("Ingrese el nuevo nombre: ");
+                fflush(stdin);
+                gets (lista[indice].nombre);
+                system("pause");
+                break;
+            case 2:
+                system("cls");
+                printf("Ingrese el nuevo ID de usuario: ");
+                scanf("%d",&auxIdUsuario);
+                lista[indice].idUsuario = auxIdUsuario;
+                system("pause");
+                break;
+            case 3:
+                system("cls");
+                printf("Ingrese el id de serie: ");
+                scanf("%d",&auxIdSerie);
+                lista[indice].idSerie = auxIdSerie;
+                system("pause");
+                break;
+            case 4:
+                seguir = 'n';
+                break;
+            }
+
+        }
+    }
+    else
+    {
+        printf ("\nNo existe el ID ingresado");
+    }
+}
+
+
